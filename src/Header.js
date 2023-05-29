@@ -6,8 +6,16 @@ import SearchIcon from '@mui/icons-material/Search';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import AppsIcon from '@mui/icons-material/Apps';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import { useSelector } from 'react-redux';
+import { selectUser } from './features/userSlice';
+import { signOut, auth } from './firebase';
 
 function Header() {
+    const user = useSelector(selectUser);
+    const handleClick = () => {
+        signOut(auth);
+    };
+
     return (
         <div className='header'>
             <div className='header_left'>
@@ -28,7 +36,7 @@ function Header() {
                 <IconButton>
                     <NotificationsIcon />
                 </IconButton>
-                <Avatar />
+                <Avatar className='header_avatar' onClick={handleClick} src={user?.photoUrl} />
             </div>
         </div>
     );

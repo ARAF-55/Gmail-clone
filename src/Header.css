@@ -8,12 +8,11 @@
 .header_left {
     display: flex;
     align-items: center;
-
 }
 
 .header_left img {
     object-fit: contain;
-    height: 80px;
+    height: 65px;
     margin-left: 5px;
 }
 
@@ -42,4 +41,8 @@
 .header_right {
     display: flex;
     padding-right: 20px;
+}
+
+.header_avatar {
+    cursor: pointer;
 }

@@ -1,0 +1,8 @@
+.root {
+    height: 100vh;
+}
+
+.root_body {
+    display: flex;
+    height: 100vh;
+}
